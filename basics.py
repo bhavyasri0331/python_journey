@@ -21,3 +21,9 @@ list=[1,2.2,'python']
 print(list)
 tuple={'python','learner'}
 print(tuple)
+
+#type conversions : one data type to another data type 
+a= 10
+b= 2.2
+print(a+b)
+
