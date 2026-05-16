@@ -1,0 +1,91 @@
+#walrus operator > The walrus operator := is an assignment expression operator introduced in Python 3.8 that allows assigning and using a value within the same expression.
+print(name:=input('enter your name'))
+#using while loop
+while (data := input("Enter: ")) != "quit":
+    print(data)
+
+
+#shutil(shell utilities ) module > used for copying the file, moving files,deleting directories,managing files, handling high level operatios.
+#1.copy() 2. copy2() 3.copy2()> Moves file to another location. 4.rmtree()> delete folder permenently
+import shutil
+shutil.copy("walrus.py" , "copy.txt")
+#rename using move()
+import shutil
+shutil.move("copy.txt", "new.txt")
+
+
+#request module
+'''The requests module in Python is used to:
+send HTTP requests
+access websites and APIs
+fetch online data
+It is one of the most popular Python libraries for web requests.'''
+#pip install requests 
+import requests
+response = requests.get("https://github.com/bhavyasri0331")
+print(response.status_code) #output> 200 means success.
+print(response.text) #output > .text gives HTML/text content.
+
+
+#generators > A generator is a special Python function that uses yield to produce values one at a time instead of returning them all at once.
+'''Why Use Generators?
+Normal functions:return all values at once
+Generators:generate values only when needed
+This is called:lazy evaluation'''
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+x = numbers()
+print(x)
+#getting values
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+x = numbers()
+print(next(x))
+print(next(x))
+print(next(x))
+
+
+#function catching > Function caching is a technique where previously computed function results are stored and reused to improve performance. In Python, it is commonly implemented using functools.lru_cache.
+#Using lru_cache
+from functools import lru_cache
+@lru_cache(maxsize=None)
+def square(n):
+    print("Calculating...")
+    return n * n
+print(square(4))
+print(square(4))
+#Second time:result comes from cache,function does not run again
+#using cache fibonacci becomes fast
+from functools import lru_cache
+@lru_cache(maxsize=None)
+def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+print(fib(50))
+ #maxsize means store only 100 recent results
+ #maxsize=None > Unlimited cache size.
+
+ #regular expressions > Regular expressions are patterns used for searching, matching, and manipulating text strings. Python provides regex support using the re module.
+#search > Searches pattern anywhere in string.
+import re
+text = "I love Python"
+x = re.search("Python", text)
+print(x)
+#findall > Returns all matches as list.
+import re
+text = "cat bat mat"
+x = re.findall("at", text)
+print(x)
+#split > 
+import re
+text = "apple,banana,mango"
+x = re.split(",", text)
+print(x)
+
+
+#asyncIO >
